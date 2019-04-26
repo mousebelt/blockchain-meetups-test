@@ -1,0 +1,37 @@
+@import 'styles/common.scss';
+
+.city-view {
+  padding: 50px 80px 50px 80px;
+  @media screen and (max-width: 800px) {
+    padding: 10px 10px;
+  }
+  background-color: $bright-blue-color;
+
+  &-header {
+    width: 100%;
+    display: block;
+  }
+
+  &-body {
+    background-color: $white-color;
+    padding: 40px 40px;
+    border-left: 1px solid $blue-color;
+    border-right: 1px solid $blue-color;
+    border-bottom: 1px solid $blue-color;
+
+    &-events {
+      &-title {
+        padding-bottom: 10px;
+        font-size: 20px;
+        color: $dark-blue-color;
+        font-weight: 700;
+      }
+
+      &__all {
+        padding-top: 70px;
+        padding-bottom: 40px;
+      }
+    }
+  }
+
+}
