@@ -21,6 +21,8 @@ const router = (
       <Route exact path='/' component={Splash} />
       <Default>
         <Route path='/sanfrancisco' component={CityView} />
+        <Route path='/sanjose' component={CityView} />
+        <Route path='/seattle' component={CityView} />
         <Route path='/events/:eventId' component={EventView} />
       </Default>
     </Switch>

@@ -24,7 +24,7 @@ class Splash extends Component {
         <div className="splash__background"></div>
         <Header />
         <div className="splash-body">
-          <div>
+          <div className="splash-body__center">
             <Logo src={LogoImg} />
             <h2 className="splash-body-title">Find blockchain meetups near you now</h2>
             <SearchInput 

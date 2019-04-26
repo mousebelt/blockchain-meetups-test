@@ -28,6 +28,12 @@
 
     flex-direction: column;
 
+    &__center {
+      padding-bottom: 150px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
     &-title {
       color: $dark-blue-color;
       text-align: center;
