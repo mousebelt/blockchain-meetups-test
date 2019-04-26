@@ -1,0 +1,21 @@
+@import 'styles/common.scss';
+
+.footer {
+  width: 100%;
+  height: 120px;
+  background-image: url('../../assets/images/footer-back.png');
+  background-color: $white-color;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+
+  &-contact {
+    position: absolute;
+    right: 30px;
+    top: 50px;
+    color: $dark-blue-color;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: $event-card-font-family;
+  }
+}

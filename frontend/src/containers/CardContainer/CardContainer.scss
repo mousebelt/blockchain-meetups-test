@@ -1,0 +1,53 @@
+@import 'styles/common.scss';
+
+.card-container {
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @media screen and (max-width: 820px) {
+      justify-content: center;
+    }
+  }
+
+  &-pagination {
+    text-align: center;
+    margin-top: 30px;
+    color: $gray-color;
+
+    &-list {
+      list-style-type: disc;
+      display: inline-block;
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+
+      &-item {
+        list-style-type: disc;
+        display: inline;
+        box-sizing: border-box;
+        
+        &-link {
+          padding: 6px 12px 6px 12px;
+          line-height: 20px;
+          border-left: 1px solid $gray-color;
+          border-top: 1px solid $gray-color;
+          border-bottom: 1px solid $gray-color;
+          text-decoration: none;
+          color: $gray-color;
+
+          &__begin {
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+            background-color: $back-gray-color;
+          }
+          &__end {
+            border-right: 1px solid $gray-color;
+            border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+            background-color: $back-gray-color;
+          }
+        }
+      }
+    }
+  }
+}
