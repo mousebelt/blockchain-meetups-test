@@ -1,0 +1,59 @@
+.event-view {
+	padding: 50px 80px 50px 80px;
+	@media screen and (max-width: 800px) {
+		padding: 10px 10px;
+	}
+	background-color: #e7eff5;
+
+	&-back {
+		padding-bottom: 40px;
+
+		& img {
+			display: block;
+		}
+	}
+
+	&-header {
+		display: block;
+		width: 100%;
+	}
+
+	&-body {
+		text-align: center;
+		background-color: white;
+		color: #0a435a;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		padding: 50px 50px;
+		border-bottom: 1px solid #247ba0;
+		border-left: 1px solid #247ba0;
+		border-right: 1px solid #247ba0;
+
+		& span {
+			vertical-align: top;
+		}
+
+		&__location {
+			color: #247ba0;
+			vertical-align: top;
+			font-size: 19px;
+		}
+
+		&__padding {
+			padding-top: 30px;
+		}
+
+		&-contact {
+			margin-top: 5px;
+			color: #247ba0;
+		}
+
+		&-button {
+			padding: 15px 25px;
+			color: white;
+			background-color: #358ed7;
+			border: none;
+			font-size: 20px;
+			border-radius: 3px;
+		}
+	}
+}
