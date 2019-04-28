@@ -1,0 +1,29 @@
+{
+    "name": "meetup_blockchain_test0427_backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon ./app.js --exec babel-node -e js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.16.4",
+        "meetup-api": "^1.4.38",
+        "mysql2": "^1.6.5",
+        "nodemon": "^1.18.11",
+        "sequelize": "^5.7.6",
+        "sequelize-cli": "^5.4.0",
+        "uuid": "^3.3.2"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-es2017": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1"
+    }
+}
