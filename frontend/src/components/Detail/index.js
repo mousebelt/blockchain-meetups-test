@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './styles.css';
+import { connect } from 'react-redux';
 
 class Detail extends Component {
 	constructor(props) {
@@ -9,6 +10,13 @@ class Detail extends Component {
 	}
 
 	render() {
+		///
+		console.log(this.props.EventsReducer);
+		//////
+		let eventId = this.props.match.params.eventId;
+		let items = this.props.EventsReducer.filter((event) => event.id === eventId);
+		let item = items[0];
+		console.log(item);
 		return (
 			<div className="event-view">
 				<div className="event-view-back">
@@ -18,14 +26,14 @@ class Detail extends Component {
 				</div>
 				<img src={'/images/event-image.png'} alt="Event Header" className="event-view-header" />
 				<div className="event-view-body">
-					<h1>Blockchain Couples Meeting</h1>
+					<h1>{item.title}</h1>
 					<h2>May 1st, 2019 - 1:23pm</h2>
 					<div className="event-view-body__padding">
 						<span>
 							<i className="material-icons">&#xe0c8;</i>
-							{/* <img src={'/images/location.png'} alt="Location" /> */}
+							{/* <img src={'/images/result.png'} alt="result" /> */}
 						</span>
-						<span className="event-view-body__location"> Bitcoin Center, San Francisco, CA</span>
+						<span className="event-view-body__events"> Bitcoin Center, San Francisco, CA</span>
 					</div>
 					<div className="event-view-body__padding">
 						Welcome to the meetup for blockchain couples! This event is hosted by MouseBelt in San
@@ -33,30 +41,13 @@ class Detail extends Component {
 					</div>
 					<div className="event-view-body__padding">
 						<h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h2>
-						Donec accumsan risus cursus augue. In metus tortor, aliquet quis, commodo ut, pharetra vel,
-						diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-						egestas. Morbi cursus est id est. Suspendisse potenti. Nulla mollis gravida nulla. Class aptent
-						taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Nulla id velit ut
-						orci tempus viverra. Suspendisse ultricies est at elit. Cras sodales. Vivamus sed mauris. Sed
-						volutpat dui quis erat. including versions of Lorem Ipsum.
+						{item.titleDesc}{' '}
 					</div>
 					<div className="event-view-body__padding">
 						<h4>Vestibulum a nunc turpis.</h4>
-						Donec accumsan risus cursus augue. In metus tortor, aliquet quis, commodo ut, pharetra vel,
-						diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-						egestas. Morbi cursus est id est. Suspendisse potenti. Nulla mollis gravida nulla. Class aptent
-						taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Nulla id velit ut
-						orci tempus viverra. Suspendisse ultricies est at elit. Cras sodales. Vivamus sed mauris. Sed
-						volutpat dui quis erat. including versions of Lorem Ipsum.
+						{item.content}
 					</div>
-					<div className="event-view-body__padding">
-						Donec accumsan risus cursus augue. In metus tortor, aliquet quis, commodo ut, pharetra vel,
-						diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-						egestas. Morbi cursus est id est. Suspendisse potenti. Nulla mollis gravida nulla. Class aptent
-						taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Nulla id velit ut
-						orci tempus viverra. Suspendisse ultricies est at elit. Cras sodales. Vivamus sed mauris. Sed
-						volutpat dui quis erat. including versions of Lorem Ipsum.
-					</div>
+					<div className="event-view-body__padding">{item.content}</div>
 					<div className="event-view-body__padding">
 						Contact the organizer:
 						<p className="event-view-body-contact">test@email.com</p>
@@ -69,4 +60,9 @@ class Detail extends Component {
 		);
 	}
 }
-export default Detail;
+const mapStateToProps = ({ EventsReducer }) => ({
+	EventsReducer
+});
+
+export default connect(mapStateToProps)(Detail);
+// export default Detail;

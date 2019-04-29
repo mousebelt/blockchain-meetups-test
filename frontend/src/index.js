@@ -1,20 +1,25 @@
-import registerServiceWorker from './registerServiceWorker';
+//import registerServiceWorker from './registerServiceWorker';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import thunkMiddleware from 'redux-thunk';
-import { createLogger } from 'redux-logger';
+import thunk from 'redux-thunk';
 import reducer from './reducers';
 import App from './containers/App';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './styles.css';
 
-const loggerMiddleware = createLogger();
-
-const store = createStore(reducer, applyMiddleware(thunkMiddleware, loggerMiddleware));
+const store = createStore(
+	reducer,
+	compose(
+		applyMiddleware(thunk),
+		typeof window === 'object' && typeof window.devToolsExtension !== 'undefined'
+			? window.devToolsExtension()
+			: (f) => f
+	)
+);
 
 ReactDOM.render(
 	<Provider store={store}>
@@ -25,4 +30,4 @@ ReactDOM.render(
 	document.getElementById('root')
 );
 
-registerServiceWorker();
+// registerServiceWorker();

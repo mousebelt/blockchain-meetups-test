@@ -13,13 +13,13 @@ class Header extends Component {
 				<div className="header-navbar">
 					<ul className="header-navbar-navigation">
 						<li>
-							<NavLink to="/seattle">Seattle</NavLink>
+							<NavLink to="/home">Seattle</NavLink>
 						</li>
 						<li>
-							<NavLink to="/sanjose">San Jose</NavLink>
+							<NavLink to="/home">San Jose</NavLink>
 						</li>
 						<li>
-							<NavLink to="/sanfrancisco">San Francisco</NavLink>
+							<NavLink to="/home">San Francisco</NavLink>
 						</li>
 					</ul>
 				</div>

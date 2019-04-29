@@ -8,12 +8,12 @@ class Search extends Component {
 		super(props);
 		this.state = {};
 
-		this.handleEnter = this.handleEnter.bind(this);
+		// this.handleEnter = this.handleEnter.bind(this);
 	}
 
-	handleEnter() {
-		// this.props.history.push('/sanfrancisco');
-	}
+	// handleEnter() {
+	// 	// this.props.history.push('/sanfrancisco');
+	// }
 
 	render() {
 		return (
@@ -23,14 +23,11 @@ class Search extends Component {
 					<div>
 						<img src="images/meetup.png" alt="logo" />
 						<h2 className="search-body-title">Find blockchain meetups near you now</h2>
-						<SearchInput value="" handleEnter={this.handleEnter} />
+						<SearchInput />
 					</div>
 				</div>
 			</div>
 		);
 	}
 }
-
-// Search.propTypes = {};
-
 export default Search;

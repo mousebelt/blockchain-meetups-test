@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { EventList } from '../../components';
+import { connect } from 'react-redux';
 import './styles.css';
 class EventPage extends Component {
 	render() {
+		console.log(this.props.location);
 		return (
 			<div className="location">
 				<img className="location-header" src="/images/sanfransisco.png" alt="SAN FRANCISCO" />
@@ -20,5 +22,9 @@ class EventPage extends Component {
 		);
 	}
 }
+const mapStateToProps = ({ location }) => ({
+	location
+});
 
-export default EventPage;
+export default connect(mapStateToProps)(EventPage);
+// export default EventPage;

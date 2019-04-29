@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux'
-import product from './productReducer'
+import { combineReducers } from 'redux';
+import EventsReducer from './EventsReducer.js';
+import LocationReducer from './LocationReducer.js';
 
-const compareApp = combineReducers({
-  product
+export default combineReducers({
+	EventsReducer,
+	LocationReducer
 });
-
-export default compareApp

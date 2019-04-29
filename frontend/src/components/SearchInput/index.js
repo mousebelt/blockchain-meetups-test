@@ -1,33 +1,37 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import changeLocation from '../../actions/changeLocation.js';
+import getEvents from '../../actions/getEvents.js';
+import { connect } from 'react-redux';
+
 import './styles.css';
 
 class SearchInput extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			value: this.props.value
+			location: props.location === undefined ? '' : props.location
 		};
-
 		this.handleChange = this.handleChange.bind(this);
 		this.handleKeyPress = this.handleKeyPress.bind(this);
 		this.handleClick = this.handleClick.bind(this);
 	}
-
+	componentDidMount() {
+		this.props.handleEnter('');
+	}
 	handleChange(e) {
 		this.setState({
-			value: e.target.value
+			location: e.target.value
 		});
 	}
 
 	handleKeyPress(e) {
 		if (e.key === 'Enter') {
-			if (this.state.value !== '') this.props.handleEnter();
+			if (this.state.value !== '') this.props.handleEnter(this.state.location);
 		}
 	}
 
 	handleClick(e) {
-		if (this.state.value !== '') this.props.handleEnter();
+		if (this.state.value !== '') this.props.handleEnter(this.state.location);
 	}
 
 	render() {
@@ -36,7 +40,7 @@ class SearchInput extends Component {
 				<input
 					type="text"
 					className="search-input-text"
-					value={this.state.value}
+					value={this.state.location}
 					placeholder="Type something"
 					onChange={this.handleChange}
 					onKeyPress={this.handleKeyPress}
@@ -49,8 +53,17 @@ class SearchInput extends Component {
 	}
 }
 
-SearchInput.propTypes = {
-	value: PropTypes.string
-};
+const mapStateToProps = ({ location }) => ({
+	location
+});
 
-export default SearchInput;
+const mapDispatchToProps = (dispatch) => ({
+	handleEnter(_location = '') {
+		console.log(_location);
+		dispatch(changeLocation(_location));
+		dispatch(getEvents());
+	}
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchInput);
+// export default SearchInput;
