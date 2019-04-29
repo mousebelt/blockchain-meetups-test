@@ -1,0 +1,85 @@
+a {
+	text-decoration: none;
+}
+
+.event-card {
+	width: 280px;
+	color: #247ba0;
+	border: 1px solid #9d9d9d;
+	box-sizing: border-box;
+	background-color: white;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: #0a435a;
+	margin-top: 20px;
+
+	&-image {
+		height: 110px;
+	}
+	&-attending {
+		height: 40px;
+		font-weight: 700;
+		font-size: 12px;
+
+		&__overlay {
+			position: relative;
+			&-attending {
+				position: absolute;
+				top: -15px;
+				right: 100px;
+				text-align: center;
+				vertical-align: middle;
+				line-height: 50px;
+			}
+			&-bubble {
+				position: absolute;
+				top: -15px;
+				right: 30px;
+				width: 45px;
+				height: 45px;
+				border-radius: 50%;
+				background-color: #f64060;
+				text-align: center;
+				vertical-align: middle;
+				line-height: 50px;
+				color: white;
+			}
+		}
+	}
+	&-title {
+		font-size: 18px;
+		font-weight: 600;
+		padding: 5px 20px 5px 20px;
+		height: 30px;
+	}
+	&-title-desc {
+		font-size: 12px;
+		padding: 5px 20px 5px 20px;
+		height: 30px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	$font-size: 12px;
+	$line-height: 1.5;
+	$lines-to-show: 4;
+	&-content {
+		font-size: $font-size;
+		padding: 0px 20px 0px 20px;
+		word-wrap: break-word;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		-webkit-line-clamp: $lines-to-show;
+		line-height: $line-height;
+		/* autoprefixer: ignore next */
+		-webkit-box-orient: vertical;
+		display: -webkit-box;
+		height: $font-size*$line-height*$lines-to-show;
+	}
+	&-name {
+		font-size: 12px;
+		font-weight: 700;
+		text-align: right;
+		padding: 40px 20px 35px 20px;
+	}
+}
