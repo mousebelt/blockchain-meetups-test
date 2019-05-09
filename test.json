@@ -1,0 +1,40 @@
+{
+  "utc_offset": 3600000,
+  "venue": {
+    "name": "Knoll Beach Studland",
+    "country": "gb",
+    "lon": -1.942052,
+    "city": "England",
+    "lat": 50.670372
+  },
+  "rsvp_limit": 0,
+  "venue_visibility": "public",
+  "visibility": "public",
+  "maybe_rsvp_count": 0,
+  "description": "<p>Apologies it's short notice!<\\/p> <p>It's looking sunny this weekend so let's go for a little paddle at the beautiful Knoll Beach, Studland and out to Old Harry's Rocks (if time and weather permits!)<\\/p> <p>Difficulty: easy<br\\/>SUP hire available<br\\/>Parking: Pay and display\\/National Trust members free<\\/p> <p>I am not a paddle board instructor, lifeguard or responsible in any way for your safety. Everyone who comes is doing so at their own risk, with their own equipment and with their own common sense.<\\/p> ",
+  "mtime": 1557384513494,
+  "event_url": "https:\\/\\/www.meetup.com\\/Paddle-Boarding-weekenders\\/events\\/261313208\\/",
+  "yes_rsvp_count": 1,
+  "duration": 7200000,
+  "payment_required": "0",
+  "name": "Knoll Beach & Old Harry's Rocks",
+  "id": "261313208",
+  "time": 1557669600000,
+  "group": {
+    "join_mode": "open",
+    "country": "gb",
+    "city": "Hamble",
+    "name": "Paddle Boarding weekenders!",
+    "group_lon": -1.33,
+    "id": 31006809,
+    "state": "F2",
+    "urlname": "Paddle-Boarding-weekenders",
+    "category": {
+      "name": "sports\\/recreation",
+      "id": 32,
+      "shortname": "sports-recreation"
+    },
+    "group_lat": 50.86
+  },
+  "status": "upcoming"
+}
